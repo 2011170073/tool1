@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+#id_big_goal_box{
+    margin:20px 0 10px 0;
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+    border:solid 1px #dddddd;
+}
+
+#id_big_goal_box p{
+    display:block;
+    width:100%;
+}
+
+#id_goal_box{
+    width:100%;
+    margin:10px 0 10px 10px;
+    border:solid 1px #dddddd;
+}
+
+.class_project_delete{
+    padding:10px 10px;
+    border:solid 2px #dddddd;
+    margin:10px 5px;
+    box-shadow:1px 1px 1px #dddddd;
+}
+
+.class_project_create2{
+    padding:10px 10px;
+    background:#dddddd;
+    box-shadow:1px 1px 1px #dddddd;
+    color:#696969;
+    border:1px solid #dddddd;
+}
+
+
+.class_project_create{
+    background:#696969;
+    color:#ffffff;
+    padding:10px 15px;
+    border-radius:5%;
+    box-shadow:1px 1px 1px #ffffff;
+}
+
+.class_project_delete{
+    background:#ffffff;
+    color:#696969;
+    padding:10px 15px;
+    border-radius:5%;
+    box-shadow:1px 1px 1px #dddddd;
+}
+
+
+
