@@ -19,6 +19,17 @@
     border:solid 1px #dddddd;
 }
 
+#id_ifthen_box{
+    width:100%;
+    margin:5px 0 5px 10px;
+}
+
+#id_ifthen_box button{
+    color:#696969;
+    text-decoration:underline #dddddd;
+    margin-right:15px;
+}
+
 .class_project_delete{
     padding:10px 10px;
     border:solid 2px #dddddd;
@@ -27,8 +38,9 @@
 }
 
 .class_project_create2{
+    font-size:15px;
     padding:10px 10px;
-    background:#dddddd;
+    background:#c0c0c0;
     box-shadow:1px 1px 1px #dddddd;
     color:#696969;
     border:1px solid #dddddd;
@@ -36,6 +48,7 @@
 
 
 .class_project_create{
+    font-size:17px;
     background:#696969;
     color:#ffffff;
     padding:10px 15px;
@@ -44,12 +57,24 @@
 }
 
 .class_project_delete{
+    font-size:14px;
     background:#ffffff;
     color:#696969;
     padding:10px 15px;
     border-radius:5%;
     box-shadow:1px 1px 1px #dddddd;
 }
+
+.class_ifthen_create{
+    font-size:12px;
+    padding:10px 10px;
+    margin-left:5px;
+    background:#dddddd;
+    box-shadow:1px 1px 1px #dddddd;
+    color:#696969;
+    border:1px solid #dddddd;
+}
+
 
 
 

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IfthensController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,10 @@ Route::middleware('auth')->group(function () {
     
     Route::get("/create2",[ProjectController::class,"project_create_view2"])->name("projectcreateview2");
     Route::post("/create2/store",[ProjectController::class,"project_create_store2"])->name("projectcreatestore2");
+    
+    Route::get("/create3",[IfthensController::class,"ifthen_create_view"])->name("ifthencreateview");
+    Route::post("/create3/store",[IfthensController::class,"ifthen_create_store"])->name("ifthencreatestore");
+    Route::delete("/delete3/{ifthen}",[IfthensController::class,"ifthen_delete"])->name("ifthendelete");
 });
 
 require __DIR__.'/auth.php';

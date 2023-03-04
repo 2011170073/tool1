@@ -10,6 +10,10 @@ class goal extends Model
 {
     use HasFactory;
     
+    public function ifthens(){
+        return $this->hasMany(ifthen::class);
+    }
+    
     protected $fillable= [
             "id",
             "name",

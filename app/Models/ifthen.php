@@ -15,5 +15,13 @@ class ifthen extends Model
         //ifthen(多)クラスのbelongsto関数でgoal(1)を参照
     }
     
+    protected $fillable = [
+        "id",
+        "then1",
+        "then2",
+        "then3",
+        "goal_id"
+        ];
+    
 //goals:ifthens = 1:多
 }

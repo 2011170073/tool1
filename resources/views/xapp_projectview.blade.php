@@ -19,9 +19,31 @@
                                 <p>小目標➔{{$goal->name}}</p>
                                 <p>やる事➔{{$goal->condition}}</p>
                                 <p>期間➔{{$goal->start_season}}～{{$goal->end_season}}</p>
+                                @foreach($goal->ifthens as $ifthen)
+                                    <div id="id_ifthen_box">
+                                        <form id="form_${{$ifthen->id}}" action="/delete3/{{$ifthen->id}}" method="post">
+                                            @csrf
+                                            @method("DELETE")
+                                            <p>
+                                                <button type="submit" onclick="delete_biggoal({{$ifthen->id}})">失敗した時➔{{$ifthen->then1}}</button>
+                                                @if(isset($ifthen->then2))
+                                                    <button type="submit" onclick="delete_biggoal({{$ifthen->id}})">失敗した時2➔{{$ifthen->then2}}</button>
+                                                @endif
+                                                @if(isset($ifthen->then3))
+                                                    <button type="submit" onclick="delete_biggoal({{$ifthen->id}})">失敗した時3➔{{$ifthen->then3}}</button>
+                                                @endif
+                                            </p>
+                                        </form>
+                                    </div>
+                                @endforeach
+                                <form action="/create3" method="get">
+                                    @csrf
+                                    <input name="goal[id]" type="hidden" value="{{$goal->id}}">
+                                    <button class="class_ifthen_create" type="submit">失敗用選択肢作成</button>
+                                </form>
                                 <form action="/delete2/{{$goal->id}}" method="post">
                                     @csrf
-                                    @method("DELETE");
+                                    @method("DELETE")
                                     <button class="class_project_delete" type="submit" onclick="delete_biggoal({{$goal->id}})">削除</button>
                                 </form>
                             </div>
