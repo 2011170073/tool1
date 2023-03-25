@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Str;
 
+$DATABASE_URL = parse_url(getenv("DATABASE_URL"));
+
 return [
 
     /*
@@ -15,7 +17,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,6 +44,7 @@ return [
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
+        
 
         'mysql' => [
             'driver' => 'mysql',
@@ -62,21 +65,42 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
-
+        
+        
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'url' => env('postgres://ogumebqlzulfsk:b20be1181ace27bbbdf077eee940da7060d93b359d803cf807126544e7cd0ae1@ec2-34-193-110-25.compute-1.amazonaws.com:5432/d58099430gm29c
+'),
+            'host' => env('DB_HOST', 'ec2-34-193-110-25.compute-1.amazonaws.com
+'),
             'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => env('DB_DATABASE', 'd58099430gm29c
+'),
+            'username' => env('DB_USERNAME', 'ogumebqlzulfsk
+'),
+            'password' => env('DB_PASSWORD', 'b20be1181ace27bbbdf077eee940da7060d93b359d803cf807126544e7cd0ae1
+'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
             'search_path' => 'public',
             'sslmode' => 'prefer',
         ],
+        
+        /*
+        'pgsql' => [
+            'driver' => 'pgsql',
+            'host' => $DATABASE_URL["host"],
+            'port' => $DATABASE_URL["port"],
+            'database' => ltrim($DATABASE_URL["path"], "/"),
+            'username' => $DATABASE_URL["user"],
+            'password' => $DATABASE_URL["pass"],
+            'charset' => 'utf8',
+            'prefix' => '',
+            'schema' => 'public',
+            'sslmode' => 'require',
+        ],
+        */
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
