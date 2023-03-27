@@ -25,12 +25,12 @@
                                             @csrf
                                             @method("DELETE")
                                             <p>
-                                                <button type="submit" onclick="delete_biggoal({{$ifthen->id}})">失敗した時➔{{$ifthen->then1}}</button>
+                                                <button type="button" onclick="delete_biggoal({{$ifthen->id}})">失敗した時➔{{$ifthen->then1}}</button>
                                                 @if(isset($ifthen->then2))
-                                                    <button type="submit" onclick="delete_biggoal({{$ifthen->id}})">失敗した時2➔{{$ifthen->then2}}</button>
+                                                    <button type="button" onclick="delete_biggoal({{$ifthen->id}})">失敗した時2➔{{$ifthen->then2}}</button>
                                                 @endif
                                                 @if(isset($ifthen->then3))
-                                                    <button type="submit" onclick="delete_biggoal({{$ifthen->id}})">失敗した時3➔{{$ifthen->then3}}</button>
+                                                    <button type="button" onclick="delete_biggoal({{$ifthen->id}})">失敗した時3➔{{$ifthen->then3}}</button>
                                                 @endif
                                             </p>
                                         </form>
@@ -44,7 +44,7 @@
                                 <form action="/delete2/{{$goal->id}}" method="post">
                                     @csrf
                                     @method("DELETE")
-                                    <button class="class_project_delete" type="submit" onclick="delete_biggoal({{$goal->id}})">削除</button>
+                                    <button class="class_project_delete" type="button" onclick="delete_biggoal({{$goal->id}})">削除</button>
                                 </form>
                             </div>
                         @endforeach
@@ -58,7 +58,7 @@
                 <form id="form_{{$big_goal->id}}" action="/delete/{{$big_goal->id}}" method="post">
                     @csrf
                     @method("DELETE")
-                    <button class="class_project_delete" type="submit" onclick="delete_biggoal({{$big_goal->id}})">削除</button>
+                    <button class="class_project_delete" type="button" onclick="delete_biggoal({{$big_goal->id}})">削除</button>
                 </form>
             @endforeach
         </div>
